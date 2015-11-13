@@ -25,7 +25,7 @@ Thumbs.db
 *.swp
  
 # Unity
-/Library/*
+/*Library/
 !/Library/BuildSettings.asset
 !/Library/ProjectSettings.asset
  
