@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class bomSetSystem : MonoBehaviour {
 	GameObject bom;
@@ -8,6 +9,7 @@ public class bomSetSystem : MonoBehaviour {
 	int bomCount;
 	public int bomLimit;
 	GameObject bS;
+	Touch touch;
 	// Use this for initialization
 	void Start () {
 		bS = GameObject.Find ("gameSystem");
@@ -41,14 +43,14 @@ public class bomSetSystem : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit = new RaycastHit();
 
-			if (Physics.Raycast(ray,out hit) && bomLimit != 0 && bS.GetComponent<bomberSystem>().isBomber == false){
+			if (Physics.Raycast(ray,out hit) && bomLimit != 0 && bS.GetComponent<bomberSystem>().isBomber == false && Input.touchCount == 1){
 				hitPos = hit.point;
 				if(hit.collider.gameObject.tag == "stage"){
 					if(kaisu == 0){
-					bom = Instantiate(
-						Resources.Load("bom_small"),
-						hitPos,
-						Quaternion.identity)as GameObject;	
+						bom = Instantiate(
+							Resources.Load("bom_small"),
+							hitPos,
+							Quaternion.identity)as GameObject;	
 					}
 					if(kaisu == 1){
 						bom = Instantiate(
@@ -64,6 +66,76 @@ public class bomSetSystem : MonoBehaviour {
 					}
 					bomLimit --;
 				}
+/*				if (Application.platform == RuntimePlatform.Android && Input.touchCount == 1) {
+					hitPos = hit.point;
+					if(hit.collider.gameObject.tag == "stage"){
+						if(kaisu == 0){
+							bom = Instantiate(
+								Resources.Load("bom_small"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 1){
+							bom = Instantiate(
+								Resources.Load("bom_middle"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 2){
+							bom = Instantiate(
+								Resources.Load("bom_big"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						bomLimit --;
+					}
+				}else if (Application.platform == RuntimePlatform.IPhonePlayer && Input.touchCount == 1) {
+					hitPos = hit.point;
+					if(hit.collider.gameObject.tag == "stage"){
+						if(kaisu == 0){
+							bom = Instantiate(
+								Resources.Load("bom_small"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 1){
+							bom = Instantiate(
+								Resources.Load("bom_middle"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 2){
+							bom = Instantiate(
+								Resources.Load("bom_big"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						bomLimit --;
+					}
+				}else{
+					hitPos = hit.point;
+					if(hit.collider.gameObject.tag == "stage"){
+						if(kaisu == 0){
+							bom = Instantiate(
+								Resources.Load("bom_small"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 1){
+							bom = Instantiate(
+								Resources.Load("bom_middle"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						if(kaisu == 2){
+							bom = Instantiate(
+								Resources.Load("bom_big"),
+								hitPos,
+								Quaternion.identity)as GameObject;	
+						}
+						bomLimit --;
+					}
+				}*/
 			}
 
 		}

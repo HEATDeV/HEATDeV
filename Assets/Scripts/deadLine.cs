@@ -10,6 +10,7 @@ public class deadLine : MonoBehaviour {
 	float sw;
 	float sh;
 	float swX;
+	int speed = 0;
 	private Slider slider;
 	float sliVal;
 	int stageCount;
@@ -27,15 +28,21 @@ public class deadLine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (Application.platform == RuntimePlatform.Android) {
+			speed = 100;
+		} else if (Application.platform == RuntimePlatform.IPhonePlayer) {
+			speed = 100;
+		}else {
+			speed = 25;
+		}
 		if(swX > -3000 && isClear == true){
-			if(swX > 2.1f * sw / 5){
-				swX -= Time.deltaTime * 500;
+			if(swX > 1.9f * sw / 5){
+				swX -= Time.deltaTime * 1000;
 			}else{
-				swX -= Time.deltaTime * 20;
+				swX -= Time.deltaTime * speed;
 			}
-			if(swX < 1.7f * sw / 5){
-				swX -= Time.deltaTime * 500;	
+			if(swX < 1.5f * sw / 5){
+				swX -= Time.deltaTime * 1000;	
 			}
 		}
 
