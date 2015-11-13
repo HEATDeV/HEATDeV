@@ -4,7 +4,6 @@ using System.Collections;
 
 public class deadLine : MonoBehaviour {
 	public GUIStyle style;
-	private Texture2D texture;
 	public GUISkin clearSkin;
 	bool isClear;
 	float sw;
@@ -16,7 +15,6 @@ public class deadLine : MonoBehaviour {
 	int stageCount;
 	// Use this for initialization
 	void Start () {
-		texture = new Texture2D(1, 1);
 		sw = Screen.width;
 		sh = Screen.height;
 		swX = sw * 2;

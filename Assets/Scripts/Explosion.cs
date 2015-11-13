@@ -9,13 +9,13 @@ public class Explosion : MonoBehaviour {
 
 	void Start(){
 		isBom = false;
-		if(GameObject.Find("gameSystem").GetComponent<bomSetSystem>().kaisu == 0){
+		if(bomManager.i == 0 || bomManager.i == 3){
 			speed = 30;
 		}
-		if(GameObject.Find("gameSystem").GetComponent<bomSetSystem>().kaisu == 1){
+		if(bomManager.i == 1 || bomManager.i == 4){
 			speed = 35;
 		}
-		if(GameObject.Find("gameSystem").GetComponent<bomSetSystem>().kaisu == 2){
+		if(bomManager.i == 2 || bomManager.i == 5){
 			speed = 50;
 		}
 	}
