@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class bomManager : MonoBehaviour {
 	static public bool isBomber;
@@ -45,6 +46,9 @@ public class bomManager : MonoBehaviour {
 			if (Physics.Raycast(ray,out hit) && bomLimitLists.Count != 0 && isBomber == false/* && Input.touchCount == 1*/){
 				hitPos = hit.point;
 				if(hit.collider.gameObject.tag == "stage"){
+					if(EventSystem.current.IsPointerOverGameObject()){
+						return;
+					}
 					createBom();
 					bomLimitLists.RemoveAt(0);
 					num = -1;
