@@ -290,7 +290,7 @@ GameObject:
   - 23: {fileID: 66086190}
   m_Layer: 10
   m_Name: stage
-  m_TagString: stage
+  m_TagString: field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8712,6 +8712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7cbfc55e395ebb4a89b5a9f9025d615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finger: 0
   bomLimitLists: 
   bomLists: []
 --- !u!4 &1942334779 stripped

@@ -9,18 +9,21 @@ public class Explosion : MonoBehaviour {
 
 	void Start(){
 		isBom = false;
-		if(bomManager.i == 0 || bomManager.i == 3){
-			speed = 30;
-		}
-		if(bomManager.i == 1 || bomManager.i == 4){
-			speed = 35;
-		}
-		if(bomManager.i == 2 || bomManager.i == 5){
-			speed = 50;
-		}
 	}
 
 	void Update(){
+		if(this.gameObject.name == "bakuhatu_small(Clone)"){
+			speed = 30;
+		}
+		if(this.gameObject.name == "bakuhatu_middle(Clone)" || this.gameObject.name == "bakuhatu_time(Clone)"){
+			speed = 35;
+		}
+		if(this.gameObject.name == "bakuhatu_big(Clone)"){
+			speed = 50;
+		}
+		if(this.gameObject.name == "bakuhatu_side(Clone)" || this.gameObject.name == "bakuhatu_upper(Clone)"){
+			speed = 25;
+		}
 		if(isBom == true){
 			timer += Time.deltaTime;
 		}
@@ -29,11 +32,35 @@ public class Explosion : MonoBehaviour {
 	void OnTriggerStay(Collider col) {
 		isBom = true;
 		// 風速計算
-		if(timer < 0.5f){
-			var velocity = (col.transform.position - transform.position).normalized * speed * speed;
-			
-			// 風力与える
-			col.GetComponent<Rigidbody>().AddForce(velocity);
+		var velocity = new Vector3(0,0,0).normalized;
+		if(col.gameObject.tag == "stage"){
+			if(timer < 0.5f){
+				if(bomManager.i == 0){
+					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
+					// 風力与える
+				}
+				if(bomManager.i == 1){
+					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
+					// 風力与える
+				}
+				if(bomManager.i == 2){
+					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
+					// 風力与える
+				}
+				if(bomManager.i == 3){
+					velocity = new Vector3(0,col.transform.position.y - transform.position.y,0).normalized * speed * speed * speed;			
+					// 風力与える
+				}
+				if(bomManager.i == 4){
+					velocity = new Vector3(col.transform.position.x - transform.position.x,0,col.transform.position.z - transform.position.z).normalized * speed * speed * speed;			
+					// 風力与える
+				}
+				if(bomManager.i == 5){
+					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
+					// 風力与える
+				}
+				col.GetComponent<Rigidbody>().AddForce(velocity);
+			}
 		}
 	}
 }

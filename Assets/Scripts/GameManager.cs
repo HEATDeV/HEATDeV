@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	private float tx;
 
 	void Awake(){
+		isDrag = false;
+		isSetBom = false;
 		if (Application.platform == RuntimePlatform.Android) {
 			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
 			Application.targetFrameRate = 60; // ターゲットフレームレートを60に設定
