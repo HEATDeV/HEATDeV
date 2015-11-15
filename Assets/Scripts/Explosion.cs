@@ -35,27 +35,27 @@ public class Explosion : MonoBehaviour {
 		var velocity = new Vector3(0,0,0).normalized;
 		if(col.gameObject.tag == "stage"){
 			if(timer < 0.5f){
-				if(bomManager.i == 0){
+				if(this.gameObject.name == "bakuhatu_small(Clone)"){
 					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
 					// 風力与える
 				}
-				if(bomManager.i == 1){
+				if(this.gameObject.name == "bakuhatu_middle(Clone)"){
 					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
 					// 風力与える
 				}
-				if(bomManager.i == 2){
+				if(this.gameObject.name == "bakuhatu_big(Clone)"){
 					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
 					// 風力与える
 				}
-				if(bomManager.i == 3){
+				if(this.gameObject.name == "bakuhatu_upper(Clone)"){
 					velocity = new Vector3(0,col.transform.position.y - transform.position.y,0).normalized * speed * speed * speed;			
 					// 風力与える
 				}
-				if(bomManager.i == 4){
+				if(this.gameObject.name == "bakuhatu_side(Clone)"){
 					velocity = new Vector3(col.transform.position.x - transform.position.x,0,col.transform.position.z - transform.position.z).normalized * speed * speed * speed;			
 					// 風力与える
 				}
-				if(bomManager.i == 5){
+				if(this.gameObject.name == "bakuhatu_time(Clone)"){
 					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
 					// 風力与える
 				}
