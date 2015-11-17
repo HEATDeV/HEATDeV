@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	private float sx;
 	private float dx;
 	private float tx;
+	public AudioClip selectSE;
 
 	void Awake(){
 		isDrag = false;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Reset(){
+		GetComponent<AudioSource> ().PlayOneShot (selectSE);
 		Application.LoadLevel (Application.loadedLevelName);
 	}
 }

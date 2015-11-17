@@ -19,4 +19,4 @@
 宗教虫
 @br
 
-@scene scene=Stage1
+@scene scene=Stage2

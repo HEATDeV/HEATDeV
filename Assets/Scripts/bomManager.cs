@@ -15,6 +15,8 @@ public class bomManager : MonoBehaviour {
 	private Vector3 hitPos;
 	private Animator animator;
 	private GameObject colParent;
+	public AudioClip createSE;
+	public AudioClip changeSE;
 	public int finger;
 	public List<int> bomLimitLists;
 	public List<GameObject> bomLists;
@@ -47,15 +49,6 @@ public class bomManager : MonoBehaviour {
 
 	void Update(){
 		boms = GameObject.FindGameObjectsWithTag("bom");
-
-
-		if(isBomber == true){
-			bomberTime += Time.deltaTime;
-		}
-		if(bomLimitLists.Count > 0 && bomberTime > 1.5f){
-			isBomber = false;
-			bomberTime = 0;
-		}
 
 		if(Input.GetMouseButtonDown(0)){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -119,25 +112,87 @@ public class bomManager : MonoBehaviour {
 	}
 
 	public void change_smallBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 0;
+		Debug.Log (""+bomName.name);
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 	public void change_middleBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 1;
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 	public void change_bigBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 2;
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 	public void change_upperBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 3;
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 	public void change_sideBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 4;
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 	public void change_timeBom(){
+		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 5;
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",true);
+			}else{
+				animator = bomLists[a].GetComponent<Animator>();
+				animator.SetBool("isBom",false);
+			}
+		}
 	}
 
 	void createBom(){
+		GetComponent<AudioSource> ().PlayOneShot (createSE);
 		if(num == 0){
 			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;
 			bom.transform.parent = colParent.transform;
@@ -171,7 +226,6 @@ public class bomManager : MonoBehaviour {
 		i = num;
 		for(int a = 0; a < 10; a++){
 			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
-				//bomLists[a].gameObject.GetComponent<CanvasRenderer>().SetAlpha(0);
 				bomLists[a].gameObject.GetComponent<Image>().enabled = false;
 				bomLists[a].gameObject.GetComponent<Button>().enabled = false;
 			}

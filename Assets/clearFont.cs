@@ -21,7 +21,7 @@ public class clearFont : MonoBehaviour {
 		}
 		if(isSE == true){
 			timer += Time.deltaTime;
-			if(timer > 1f){
+			if(timer > 0.5f){
 				GetComponent<AudioSource>().PlayOneShot(clearSE);
 				timer = -1000f;
 			}

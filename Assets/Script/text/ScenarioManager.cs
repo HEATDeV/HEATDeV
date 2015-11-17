@@ -102,7 +102,7 @@ public class ScenarioManager : MonoBehaviour {
 	}
 
 	public void Skip(){
-		Application.LoadLevel("Stage1");
+		Application.LoadLevel("Stage2");
 	}
 	
 	#endregion
