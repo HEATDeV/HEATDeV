@@ -5,12 +5,7 @@ public class bomSystem_side : MonoBehaviour {
 	static public GameObject me;
 	
 	void Start(){
-		me = this.gameObject;
-	}
-	
-	void Update () {
-		if (bomManager.isBomber == true) {
-			bomManager.sideBom();
-		}
+		//me = gameObject;
+		gameObject.transform.parent = GameObject.Find("putBomSet").transform;
 	}
 }

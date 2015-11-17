@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class bomManager : MonoBehaviour {
 	static public bool isBomber;
@@ -8,12 +9,22 @@ public class bomManager : MonoBehaviour {
 	static public GameObject bakuhu;
 	static public int num;
 	static public int i;
+	private int b;
 	private int bomCount;
 	private GameObject bom;
 	private Vector3 hitPos;
+	private Animator animator;
+	private GameObject colParent;
 	public int finger;
 	public List<int> bomLimitLists;
 	public List<GameObject> bomLists;
+
+	float t;
+	bool isTimeBomStart;
+
+	GameObject[] boms;
+
+	private GameObject child;
 
 	void Start(){
 		bom = null;
@@ -21,18 +32,24 @@ public class bomManager : MonoBehaviour {
 		bomberTime = 0;
 		num = -1;
 		bomCount = GameObject.FindGameObjectsWithTag("ui_bom").Length;
+		boms = GameObject.FindGameObjectsWithTag("bom");
 		for(int i = 1; i <= bomCount; i++){
 			bomLimitLists.Add (i);
 		}
-		bomLists.Add (GameObject.Find ("bom1"));
-		bomLists.Add (GameObject.Find ("bom2"));
-		bomLists.Add (GameObject.Find ("bom3"));
-		bomLists.Add (GameObject.Find ("bom4"));
-		bomLists.Add (GameObject.Find ("bom5"));
-		bomLists.Add (GameObject.Find ("bom6"));
+		for(int i = 0; i < 10; i++){
+			if(GameObject.Find ("bom"+i) != null){
+				bomLists.Add (GameObject.Find ("bom"+i));
+			}else{
+				break;
+			}
+		}
 	}
 
 	void Update(){
+		Debug.Log ("" + num);
+		boms = GameObject.FindGameObjectsWithTag("bom");
+
+
 		if(isBomber == true){
 			bomberTime += Time.deltaTime;
 		}
@@ -51,46 +68,55 @@ public class bomManager : MonoBehaviour {
 					if(EventSystem.current.IsPointerOverGameObject()){
 						return;
 					}
+					colParent = hit.collider.gameObject;
 					createBom();
 					bomLimitLists.RemoveAt(0);
-					num = -1;
 				}
 			}	
 		}
-	}
 
-	static public void smallBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_small"),bomSystem_small.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_small.me.gameObject);
-	}
-
-	static public void middleBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_middle"),bomSystem_middle.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_middle.me.gameObject);
-	}
-
-	static public void bigBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_big"),bomSystem_big.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_big.me.gameObject);
-	}
-
-	static public void upperBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_upper"),bomSystem_upper.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_upper.me.gameObject);
-	}
-	
-	static public void sideBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_side"),bomSystem_side.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_side.me.gameObject);
-	}
-	
-	static public void timeBom(){
-		bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_time"),bomSystem_time.me.transform.position,Quaternion.identity)as GameObject;
-		Destroy(bomSystem_time.me.gameObject);
+		if (isTimeBomStart){
+			t += 1.0f * Time.deltaTime;
+			if (1 < t){
+				for (int i = 0; i < boms.Length; i ++) {
+					if (boms[i].transform.name == "bom_time(Clone)"){
+						bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_time"),boms[i].transform.position,Quaternion.identity)as GameObject;
+						Destroy(boms[i].gameObject);
+					}
+				}
+			}
+		}
 	}
 
 	public void bomber(){
+		for (int i = 0; i < boms.Length; i ++) {
+			if (boms[i].transform.name == "bom_big(Clone)"){
+				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_big"),boms[i].transform.position,Quaternion.identity)as GameObject;
+				Destroy(boms[i].gameObject);
+			}
+			if (boms[i].transform.name == "bom_middle(Clone)"){
+				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_middle"),boms[i].transform.position,Quaternion.identity)as GameObject;
+				Destroy(boms[i].gameObject);
+			}
+			if (boms[i].transform.name == "bom_small(Clone)"){
+				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_small"),boms[i].transform.position,Quaternion.identity)as GameObject;
+				Destroy(boms[i].gameObject);
+			}
+			if (boms[i].transform.name == "bom_upper(Clone)"){
+				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_upper"),boms[i].transform.position,Quaternion.identity)as GameObject;
+				Destroy(boms[i].gameObject);
+			}
+			if (boms[i].transform.name == "bom_side(Clone)"){
+				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_side"),boms[i].transform.position,Quaternion.identity)as GameObject;
+				Destroy(boms[i].gameObject);
+			}
+			if (boms[i].transform.name == "bom_time(Clone)"){
+				isTimeBomStart = true;
+			}
+
+		}
 		isBomber = true;
+
 	}
 
 	public void change_smallBom(){
@@ -111,26 +137,45 @@ public class bomManager : MonoBehaviour {
 	public void change_timeBom(){
 		num = 5;
 	}
+
 	void createBom(){
 		if(num == 0){
-			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		if(num == 1){
 			bom = Instantiate(Resources.Load("bom_middle"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		if(num == 2){
 			bom = Instantiate(Resources.Load("bom_big"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		if(num == 3){
 			bom = Instantiate(Resources.Load("bom_upper"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		if(num == 4){
 			bom = Instantiate(Resources.Load("bom_side"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		if(num == 5){
 			bom = Instantiate(Resources.Load("bom_time"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom.transform.parent = colParent.transform;
+			num = -1;
 		}
 		i = num;
-		bomLists[i].GetComponent<CanvasRenderer>().SetAlpha(0);
+		for(int a = 0; a < 10; a++){
+			if(bomLists[a].gameObject.name == bomName.name && bomName.name != "null"){
+				//bomLists[a].gameObject.GetComponent<CanvasRenderer>().SetAlpha(0);
+				bomLists[a].gameObject.GetComponent<Image>().enabled = false;
+				bomLists[a].gameObject.GetComponent<Button>().enabled = false;
+			}
+		}
 	}
 }

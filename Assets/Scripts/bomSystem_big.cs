@@ -5,12 +5,7 @@ public class bomSystem_big : MonoBehaviour {
 	static public GameObject me;
 	
 	void Start(){
-		me = this.gameObject;
-	}
-
-	void Update () {
-		if (bomManager.isBomber == true) {
-			bomManager.bigBom();
-		}
+		//me = gameObject;
+		gameObject.transform.parent = GameObject.Find("putBomSet").transform;
 	}
 }
