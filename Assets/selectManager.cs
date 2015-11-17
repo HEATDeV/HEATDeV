@@ -3,7 +3,7 @@ using System.Collections;
 
 public class selectManager : MonoBehaviour {
 	public void stage1(){
-		Application.LoadLevel ("Stage1");
+		Application.LoadLevel ("Story");
 	}
 	public void stage2(){
 		Application.LoadLevel ("Stage2");

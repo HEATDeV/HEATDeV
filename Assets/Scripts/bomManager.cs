@@ -46,7 +46,6 @@ public class bomManager : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log ("" + num);
 		boms = GameObject.FindGameObjectsWithTag("bom");
 
 
