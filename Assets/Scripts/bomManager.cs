@@ -54,9 +54,9 @@ public class bomManager : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit = new RaycastHit();
 			
-			if (Physics.Raycast(ray,out hit) && bomLimitLists.Count != 0 && isBomber == false && Input.touchCount == finger){
+			if (Physics.Raycast(ray,out hit) && bomLimitLists.Count != 0 && isBomber == false && Input.touchCount == finger && num != -1){
 				hitPos = hit.point;
-				if(hit.collider.gameObject.tag == "stage" || hit.collider.gameObject.tag == "field"){
+				if(hit.collider.gameObject.tag == "stage"){
 					if(EventSystem.current.IsPointerOverGameObject()){
 						return;
 					}
@@ -194,32 +194,32 @@ public class bomManager : MonoBehaviour {
 	void createBom(){
 		GetComponent<AudioSource> ().PlayOneShot (createSE);
 		if(num == 0){
-			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;
+			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.25f, hitPos.z),Quaternion.identity)as GameObject;
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}
 		if(num == 1){
-			bom = Instantiate(Resources.Load("bom_middle"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_middle"),new Vector3(hitPos.x, hitPos.y + 1.25f, hitPos.z),Quaternion.identity)as GameObject;	
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}
 		if(num == 2){
-			bom = Instantiate(Resources.Load("bom_big"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_big"),new Vector3(hitPos.x, hitPos.y + 1.25f, hitPos.z),Quaternion.identity)as GameObject;	
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}
 		if(num == 3){
-			bom = Instantiate(Resources.Load("bom_upper"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_upper"),new Vector3(hitPos.x, hitPos.y + 1.25f, hitPos.z),Quaternion.identity)as GameObject;	
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}
 		if(num == 4){
-			bom = Instantiate(Resources.Load("bom_side"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_side"),new Vector3(hitPos.x, hitPos.y + 1.25f, hitPos.z),Quaternion.identity)as GameObject;	
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}
 		if(num == 5){
-			bom = Instantiate(Resources.Load("bom_time"),new Vector3(hitPos.x, hitPos.y + 0.5f, hitPos.z),Quaternion.identity)as GameObject;	
+			bom = Instantiate(Resources.Load("bom_time"),new Vector3(hitPos.x, hitPos.y + 1.25f, hitPos.z),Quaternion.identity)as GameObject;	
 			bom.transform.parent = colParent.transform;
 			num = -1;
 		}

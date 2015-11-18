@@ -13,16 +13,19 @@ public class Explosion : MonoBehaviour {
 
 	void Update(){
 		if(this.gameObject.name == "bakuhatu_small(Clone)"){
-			speed = 30;
+			speed = 25;
 		}
 		if(this.gameObject.name == "bakuhatu_middle(Clone)" || this.gameObject.name == "bakuhatu_time(Clone)"){
 			speed = 35;
 		}
 		if(this.gameObject.name == "bakuhatu_big(Clone)"){
-			speed = 50;
+			speed = 45;
 		}
-		if(this.gameObject.name == "bakuhatu_side(Clone)" || this.gameObject.name == "bakuhatu_upper(Clone)"){
-			speed = 25;
+		if(this.gameObject.name == "bakuhatu_side(Clone)"){
+			speed = 15f;
+		}
+		if(this.gameObject.name == "bakuhatu_upper(Clone)"){
+			speed = 9f;
 		}
 		if(isBom == true){
 			timer += Time.deltaTime;
