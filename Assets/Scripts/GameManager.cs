@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 	private Vector3 deltMouse;
 	private Vector3 nowMouse;
 	private Vector3 edMouse;
+    int num;
 	private int frame;
 	private bool isDrag;
 	private bool isSetBom;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	public AudioClip selectSE;
 
 	void Awake(){
+        num = 0;
 		isDrag = false;
 		isSetBom = false;
 		if (Application.platform == RuntimePlatform.Android) {
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour {
 			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
 			Application.targetFrameRate = 60; // ターゲットフレームレートを60に設定
 		}
+        num = system.stageNum;
+        Instantiate(Resources.Load("prefab/stage/stage" + num));
 	}
 	
 	void Update () {
@@ -65,6 +69,6 @@ public class GameManager : MonoBehaviour {
 
 	public void Reset(){
 		GetComponent<AudioSource> ().PlayOneShot (selectSE);
-		Application.LoadLevel (Application.loadedLevelName);
+		Application.LoadLevel ("Select");
 	}
 }

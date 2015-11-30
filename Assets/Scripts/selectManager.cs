@@ -6,29 +6,27 @@ public class selectManager : MonoBehaviour {
 		Application.LoadLevel ("Story");
 	}
 	public void stage2(){
-		Application.LoadLevel ("Stage2");
+        Application.LoadLevel("Story");
 	}
 	public void stage3(){
-		Application.LoadLevel ("Stage3");
+        Application.LoadLevel("Story");
 	}
 	public void stage4(){
-		Application.LoadLevel ("Stage4");
+        Application.LoadLevel("Story");
 	}
 	public void stage5(){
-		Application.LoadLevel ("Stage5");
+        Application.LoadLevel("Story");
 	}
 	public void stage6(){
-		Application.LoadLevel ("Stage6");
+        Application.LoadLevel("Story");
 	}
 	public void stage7(){
-		Application.LoadLevel ("Stage7");
+        Application.LoadLevel("Story");
 	}
 	public void stage8(){
-		Application.LoadLevel ("Stage8");
+        Application.LoadLevel("Story");
 	}
 	public void stage9(){
-		Application.LoadLevel ("Stage9");
+        Application.LoadLevel("Story");
 	}
-
-
 }

@@ -15,7 +15,7 @@ public class clearFont : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if(deadLine.isClear == true){
+		if(deadLine.isClear == true && nonCol.isDamage == false){
 			isSE = true;
 			animator.SetBool("isClear",true);
 		}

@@ -7,6 +7,13 @@ public class textSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "道を通れるようにしてください";
+        if(system.stageNum == 1)
+        {
+		    text.text = "道を通れるようにしてください";
+        }
+        else
+        {
+            text.text = "右の家は壊さないでください";
+        }
 	}
 }
