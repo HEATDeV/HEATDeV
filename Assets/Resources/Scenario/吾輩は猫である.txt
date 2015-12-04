@@ -19,4 +19,4 @@
 それではゲームをどうぞ。
 @br
 
-@scene scene=Stage2
+@scene scene=mainStage

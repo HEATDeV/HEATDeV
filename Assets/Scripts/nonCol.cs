@@ -3,7 +3,7 @@ using System.Collections;
 
 public class nonCol : MonoBehaviour {
     static public bool isDamage;
-
+    static public GameObject colMe;
     void Start() {
         isDamage = false;
     }
@@ -11,6 +11,7 @@ public class nonCol : MonoBehaviour {
     void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag == "stage"){
+            colMe = this.gameObject;
             isDamage = true;
         }
     }
