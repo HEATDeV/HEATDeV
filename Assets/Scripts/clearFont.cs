@@ -6,16 +6,20 @@ public class clearFont : MonoBehaviour {
 	private Animator animator;
 	public bool isSE;
 	private float timer;
+	private int enemyCount;
 	// Use this for initialization
 	void Start () {
 		isSE = false;
 		timer = 0;
 		animator = GetComponent<Animator>();
-
+		enemyCount =  GameObject.FindGameObjectsWithTag("enemy").Length;
 	}
 	// Update is called once per frame
 	void Update () {
-		if(deadLine.isClear == true && nonCol.isDamage == false){
+		if(enemyCount != 0){
+			enemyCount =  GameObject.FindGameObjectsWithTag("enemy").Length;
+		}
+		if(deadLine.isClear == true && nonCol.isDamage == false && enemyCount == 0){
 			isSE = true;
 			animator.SetBool("isClear",true);
 		}

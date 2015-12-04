@@ -9,6 +9,8 @@ TagManager:
   - sky
   - ui_bom
   - field
+  - enemy
+  - dieEnemy
   layers:
   - Default
   - TransparentFX

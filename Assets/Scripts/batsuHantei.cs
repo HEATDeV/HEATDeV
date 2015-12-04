@@ -34,6 +34,9 @@ public class batsuHantei : MonoBehaviour {
             {
                 target = nonCol.colMe.transform;
             }
+			if(enemyManager.enemyOb != null){
+				target = enemyManager.enemyOb.transform;
+			}
             var screenPos = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(target.position);
             var localPos = Vector2.zero;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTrans, screenPos, GameObject.Find("Main Camera").GetComponent<Camera>(), out localPos);
