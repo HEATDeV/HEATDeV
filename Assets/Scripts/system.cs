@@ -4,8 +4,8 @@ using System.Collections;
 public class system : MonoBehaviour
 {
     static public int stageNum;
-    int clearNum;
-
+	static public int stageID;
+	int clearNum;
     void Start()
     {
         stageNum = PlayerPrefs.GetInt("stageNum");
@@ -22,81 +22,101 @@ public class system : MonoBehaviour
 
     public void numSelect1() {
         stageNum = 1;
+		stageID = 1;
     }
     public void numSelect2()
     {
         stageNum = 2;
-    }
+		stageID = 2;
+	}
     public void numSelect3()
     {
         stageNum = 3;
-    }
+		stageID = 3;
+	}
     public void numSelect4()
     {
         stageNum = 4;
-    }
+		stageID = 1;
+	}
     public void numSelect5()
     {
         stageNum = 5;
-    }
+		stageID = 2;
+	}
     public void numSelect6()
     {
         stageNum = 6;
-    }
+		stageID = 3;
+	}
     public void numSelect7()
     {
         stageNum = 7;
-    }
+		stageID = 1;
+	}
     public void numSelect8()
     {
         stageNum = 8;
-    }
+		stageID = 2;
+	}
     public void numSelect9()
     {
         stageNum = 9;
-    }
+		stageID = 3;
+	}
     public void numSelect10()
     {
         stageNum = 10;
-    }
+		stageID = 2;
+	}
     public void numSelect11()
     {
         stageNum = 11;
-    }
+		stageID = 3;
+	}
     public void numSelect12()
     {
         stageNum = 12;
-    }
+		stageID = 1;
+	}
     public void numSelect13()
     {
         stageNum = 13;
-    }
+		stageID = 2;
+	}
     public void numSelect14()
     {
         stageNum = 14;
-    }
+		stageID = 3;
+	}
     public void numSelect15()
     {
         stageNum = 15;
-    }
+		stageID = 1;
+	}
     public void numSelect16()
     {
         stageNum = 16;
-    }
+		stageID = 2;
+	}
     public void numSelect17()
     {
         stageNum = 17;
+		stageID = 3;
     }
     public void numSelect18()
     {
         stageNum = 18;
-    }
+		stageID = 1;
+	}
     public void numSelect19()
     {
         stageNum = 19;
-    }
+		stageID = 2;
+	}
     public void numSelect20()
     {
         stageNum = 20;
-    }
+		stageID = 3;
+	}
 }

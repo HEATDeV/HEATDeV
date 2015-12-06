@@ -46,7 +46,6 @@ public class ui_map_move : MonoBehaviour {
 			isMove = false;
 			timer = 0;
 		}
-		Debug.Log("isMove = " + isMove + "\n" + "touchPos_delx = " + touchPos_delt.x);
         touchManager();
 
 
@@ -95,6 +94,16 @@ public class ui_map_move : MonoBehaviour {
             if (3 < frame)
             {
 				touchPos_delt = touchPos_ed - touchPos_now;
+				if(this.transform.position.x <= -sw / 2){
+					this.transform.position = new Vector3(-sw / 2, this.transform.position.y, this.transform.position.z);
+					if(touchPos_delt.x > 0)
+						touchPos_delt.x = 0;
+				}
+				if(this.transform.position.x >= sw + sw / 2){
+					this.transform.position = new Vector3(sw + sw / 2, this.transform.position.y, this.transform.position.z);
+					if(touchPos_delt.x < 0)
+						touchPos_delt.x = 0;
+				}
                 transform.Translate(Vector3.left * sw * 0.003f * touchPos_delt.x, Space.World);
             }
             frame++;

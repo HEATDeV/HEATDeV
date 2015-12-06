@@ -6,7 +6,7 @@ using System.Text;
 [RequireComponent(typeof( TextController))]
 public class ScenarioManager : MonoBehaviour {
 	
-	public string LoadFileName;
+	private string LoadFileName;
 	
 	private string[] m_scenarios;
 	private int m_currentLine = 0;
@@ -15,7 +15,40 @@ public class ScenarioManager : MonoBehaviour {
 	
 	private TextController m_textController;
 	private CommandController m_commandController;
-	
+
+	void Awake(){
+		if(system.stageNum == 1){
+			LoadFileName = "stage1";
+		}
+		if(system.stageNum == 2){
+			LoadFileName = "stage2";
+		}
+		if(system.stageNum == 3){
+			LoadFileName = "stage3";
+		}
+		if(system.stageNum == 4){
+			LoadFileName = "stage4";
+		}
+		if(system.stageNum == 5){
+			LoadFileName = "stage5";
+		}
+		if(system.stageNum == 6){
+			LoadFileName = "stage6";
+		}
+		if(system.stageNum == 7){
+			LoadFileName = "stage7";
+		}
+		if(system.stageNum == 8){
+			LoadFileName = "stage8";
+		}
+		if(system.stageNum == 9){
+			LoadFileName = "stage9";
+		}
+		if(system.stageNum == 10){
+			LoadFileName = "stage10";
+		}
+	}
+
 	void RequestNextLine ()
 	{
 		var currentText = m_scenarios[m_currentLine];

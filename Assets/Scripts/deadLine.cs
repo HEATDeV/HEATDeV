@@ -10,22 +10,22 @@ public class deadLine : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		isClear = false;
-		slider = GameObject.Find("stageSlider").GetComponent<Slider>();
+//		slider = GameObject.Find("stageSlider").GetComponent<Slider>();
 		stageCount = GameObject.FindGameObjectsWithTag("stage").Length - 1;
-		slider.maxValue = stageCount;
-		sliVal = stageCount;
+//		slider.maxValue = stageCount;
+//		sliVal = stageCount;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		stageCount = GameObject.FindGameObjectsWithTag("stage").Length - 1;
-		if(sliVal > stageCount){
+/*		if(sliVal > stageCount){
 			sliVal -= 0.5f;
 		}
 		slider.value = sliVal;
 		if(sliVal <= 0){
 			isClear = true;
-		}
+		}*/
 	}
 	void OnCollisionStay(Collision collision){
 		Destroy (collision.gameObject);
