@@ -23,7 +23,8 @@ public class bomManager : MonoBehaviour {
 
 	float t;
 	bool isTimeBomStart;
-
+	int frame;
+	bool isStart;
 	GameObject[] boms;
 
 	private GameObject child;
@@ -31,30 +32,169 @@ public class bomManager : MonoBehaviour {
 	void Start(){
 		bom = null;
 		isBomber = false;
+		isStart = false;
 		bomberTime = 0;
 		num = -1;
-		bomCount = GameObject.FindGameObjectsWithTag("ui_bom").Length;
-		boms = GameObject.FindGameObjectsWithTag("bom");
-		for(int i = 1; i <= bomCount; i++){
-			bomLimitLists.Add (i);
-		}
-		for(int i = 0; i < 10; i++){
-			if(GameObject.Find ("bom"+i) != null){
-				bomLists.Add (GameObject.Find ("bom"+i));
-			}else{
-				break;
-			}
-		}
+		frame = 0;
 	}
 
 	void Update(){
+		if(frame < 60){
+			frame ++;
+		}
+		if(frame > 3 && isStart == false){
+			bomCount = GameObject.FindGameObjectsWithTag("ui_bom").Length;
+			boms = GameObject.FindGameObjectsWithTag("bom");
+			for(int i = 1; i <= bomCount; i++){
+				bomLimitLists.Add (i);
+			}
+			for(int i = 0; i < 10; i++){
+				if(GameObject.Find ("bom"+i) != null){
+					bomLists.Add (GameObject.Find ("bom"+i));
+				}else{
+					break;
+				}
+			}
+			isStart = true;
+		}
+
+		if(bomName.isBom1 == true){
+			if(bomName.isName1 == "bom0(Clone)"){
+				Debug.Log("aaa");
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName1 == "bom1(Clone)"){
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName1 == "bom2(Clone)"){
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName1 == "bom3(Clone)"){
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName1 == "bom4(Clone)"){
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName1 == "bom5(Clone)"){
+				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom1 = false;
+		}
+		if(bomName.isBom2 == true){
+			if(bomName.isName2 == "bom0(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName2 == "bom1(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName2 == "bom2(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName2 == "bom3(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName2 == "bom4(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName2 == "bom5(Clone)"){
+				GameObject.Find("bom1").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom2 = false;
+		}
+		if(bomName.isBom3 == true){
+			if(bomName.isName3 == "bom0(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName3 == "bom1(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName3 == "bom2(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName3 == "bom3(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName3 == "bom4(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName3 == "bom5(Clone)"){
+				GameObject.Find("bom2").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom3 = false;
+		}
+		if(bomName.isBom4 == true){
+			if(bomName.isName4 == "bom0(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName4 == "bom1(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName4 == "bom2(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName4 == "bom3(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName4 == "bom4(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName4 == "bom5(Clone)"){
+				GameObject.Find("bom3").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom4 = false;
+		}
+		if(bomName.isBom5 == true){
+			if(bomName.isName5 == "bom0(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName5 == "bom1(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName5 == "bom2(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName5 == "bom3(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName5 == "bom4(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName5 == "bom5(Clone)"){
+				GameObject.Find("bom4").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom5 = false;
+		}
+		if(bomName.isBom6 == true){
+			if(bomName.isName6 == "bom0(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName6 == "bom1(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName6 == "bom2(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName6 == "bom3(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName6 == "bom4(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName6 == "bom5(Clone)"){
+				GameObject.Find("bom5").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom6 = false;
+		}
+		if(bomName.isBom7 == true){
+			if(bomName.isName7 == "bom0(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName7 == "bom1(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName7 == "bom2(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName7 == "bom3(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName7 == "bom4(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName7 == "bom5(Clone)"){
+				GameObject.Find("bom6").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom7 = false;
+		}
+		if(bomName.isBom8 == true){
+			if(bomName.isName8 == "bom0(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_smallBom);
+			}else if(bomName.isName8 == "bom1(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_middleBom);
+			}else if(bomName.isName8 == "bom2(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_bigBom);
+			}else if(bomName.isName8 == "bom3(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_upperBom);
+			}else if(bomName.isName8 == "bom4(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_sideBom);
+			}else if(bomName.isName8 == "bom5(Clone)"){
+				GameObject.Find("bom7").GetComponent<Button> ().onClick.AddListener (change_timeBom);
+			}
+			bomName.isBom8 = false;
+		}
+
 		boms = GameObject.FindGameObjectsWithTag("bom");
 
 		if(Input.GetMouseButtonDown(0)){
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit = new RaycastHit();
 			
-			if (Physics.Raycast(ray,out hit) && bomLimitLists.Count != 0 && isBomber == false && Input.touchCount == finger && num != -1){
+			if (Physics.Raycast(ray,out hit) && bomLimitLists.Count != 0 && isBomber == false/* && Input.touchCount == finger*/ && num != -1){
 				hitPos = hit.point;
 				if(hit.collider.gameObject.tag == "stage"){
 					if(EventSystem.current.IsPointerOverGameObject()){
@@ -114,7 +254,7 @@ public class bomManager : MonoBehaviour {
 	public void change_smallBom(){
 		GetComponent<AudioSource> ().PlayOneShot (changeSE);
 		num = 0;
-		Debug.Log (""+bomName.name);
+//		Debug.Log (""+bomName.name);
 		for(int a = 0; a < 10; a++){
 			if(bomLists[a].gameObject.name == bomName.name){
 				animator = bomLists[a].GetComponent<Animator>();
@@ -230,5 +370,11 @@ public class bomManager : MonoBehaviour {
 				bomLists[a].gameObject.GetComponent<Button>().enabled = false;
 			}
 		}
+	}
+
+	public void reset (){
+		num = -1;
+		clearHantei.deadTimer = 0;
+		Application.LoadLevel ("mainStage");
 	}
 }
