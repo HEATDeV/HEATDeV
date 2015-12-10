@@ -13,7 +13,11 @@ public class Scene : ICommand
 
 	public void Command (Dictionary<string, string> command)
 	{
-		Application.LoadLevel(command["scene"]);
-	}
+		storyManager.isStart = true;
+		GameObject.Find("ui_black").GetComponent<Animator>().SetBool("isBlack",true);
+		if(storyManager.alpha > 1.4){
+			Application.LoadLevel(command["scene"]);
+		}
+	}	
 }
 

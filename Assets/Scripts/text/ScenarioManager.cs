@@ -20,32 +20,14 @@ public class ScenarioManager : MonoBehaviour {
 		if(system.stageNum == 1){
 			LoadFileName = "stage1";
 		}
-		if(system.stageNum == 2){
-			LoadFileName = "stage2";
-		}
-		if(system.stageNum == 3){
-			LoadFileName = "stage3";
-		}
-		if(system.stageNum == 4){
-			LoadFileName = "stage4";
-		}
-		if(system.stageNum == 5){
-			LoadFileName = "stage5";
-		}
-		if(system.stageNum == 6){
-			LoadFileName = "stage6";
-		}
-		if(system.stageNum == 7){
-			LoadFileName = "stage7";
-		}
-		if(system.stageNum == 8){
-			LoadFileName = "stage8";
-		}
-		if(system.stageNum == 9){
-			LoadFileName = "stage9";
-		}
 		if(system.stageNum == 10){
 			LoadFileName = "stage10";
+		}
+		if(system.stageNum == 20){
+			LoadFileName = "stage20";
+		}
+		if(Application.loadedLevelName == "ending"){
+			LoadFileName = "ending";
 		}
 	}
 
@@ -135,7 +117,8 @@ public class ScenarioManager : MonoBehaviour {
 	}
 
 	public void Skip(){
-		Application.LoadLevel("mainStage");
+		storyManager.isStart = true;
+		GameObject.Find("ui_black").GetComponent<Animator>().SetBool("isBlack",true);
 	}
 	
 	#endregion

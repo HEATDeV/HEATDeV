@@ -26,19 +26,26 @@ public class bomManager : MonoBehaviour {
 	int frame;
 	bool isStart;
 	GameObject[] boms;
-
+	static public int bomLim;
+	bool isBomLim;
+	static public int limNum;
 	private GameObject child;
 
 	void Start(){
 		bom = null;
+		isBomLim = false;
 		isBomber = false;
 		isStart = false;
 		bomberTime = 0;
 		num = -1;
 		frame = 0;
+		bomLim = -1;
 	}
 
 	void Update(){
+		if(bomLim == limNum && isBomber == true){
+			isBomber = false;
+		}
 		if(frame < 60){
 			frame ++;
 		}
@@ -58,9 +65,14 @@ public class bomManager : MonoBehaviour {
 			isStart = true;
 		}
 
+		if(isBomLim == false && bomLimitLists.Count == bomCount && frame > 10){
+			bomLim = bomCount;
+			limNum = bomLim;
+			isBomLim = true;
+		}
+
 		if(bomName.isBom1 == true){
 			if(bomName.isName1 == "bom0(Clone)"){
-				Debug.Log("aaa");
 				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_smallBom);
 			}else if(bomName.isName1 == "bom1(Clone)"){
 				GameObject.Find("bom0").GetComponent<Button> ().onClick.AddListener (change_middleBom);
@@ -333,6 +345,7 @@ public class bomManager : MonoBehaviour {
 
 	void createBom(){
 		GetComponent<AudioSource> ().PlayOneShot (createSE);
+		limNum -= 1;
 		if(num == 0){
 			bom = Instantiate(Resources.Load("bom_small"),new Vector3(hitPos.x, hitPos.y + 0.25f, hitPos.z),Quaternion.identity)as GameObject;
 			bom.transform.parent = colParent.transform;

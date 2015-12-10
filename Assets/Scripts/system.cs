@@ -5,6 +5,28 @@ public class system : MonoBehaviour
 {
     static public int stageNum;
 	static public int stageID;
+
+	static public bool clear1;
+	static public bool clear2;
+	static public bool clear3;
+	static public bool clear4;
+	static public bool clear5;
+	static public bool clear6;
+	static public bool clear7;
+	static public bool clear8;
+	static public bool clear9;
+	static public bool clear10;
+	static public bool clear11;
+	static public bool clear12;
+	static public bool clear13;
+	static public bool clear14;
+	static public bool clear15;
+	static public bool clear16;
+	static public bool clear17;
+	static public bool clear18;
+	static public bool clear19;
+	static public bool clear20;
+
 	int clearNum;
     void Start()
     {
@@ -27,12 +49,12 @@ public class system : MonoBehaviour
     public void numSelect2()
     {
         stageNum = 2;
-		stageID = 2;
+		stageID = 1;
 	}
     public void numSelect3()
     {
         stageNum = 3;
-		stageID = 3;
+		stageID = 2;
 	}
     public void numSelect4()
     {
@@ -42,12 +64,12 @@ public class system : MonoBehaviour
     public void numSelect5()
     {
         stageNum = 5;
-		stageID = 2;
+		stageID = 3;
 	}
     public void numSelect6()
     {
         stageNum = 6;
-		stageID = 3;
+		stageID = 1;
 	}
     public void numSelect7()
     {
@@ -62,12 +84,12 @@ public class system : MonoBehaviour
     public void numSelect9()
     {
         stageNum = 9;
-		stageID = 3;
+		stageID = 1;
 	}
     public void numSelect10()
     {
         stageNum = 10;
-		stageID = 2;
+		stageID = 3;
 	}
     public void numSelect11()
     {

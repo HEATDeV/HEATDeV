@@ -7,10 +7,16 @@ public class nonCol : MonoBehaviour {
     void Start() {
         isDamage = false;
     }
-
+	void OnCollisionEnter(Collision collision)
+	{
+		if(collision.gameObject.tag == "stage" && this.gameObject.tag != "deadOb"){
+			colMe = this.gameObject;
+			isDamage = true;
+		}
+	}
     void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == "stage"){
+		if(collision.gameObject.tag == "stage" && this.gameObject.tag != "deadOb"){
             colMe = this.gameObject;
             isDamage = true;
         }

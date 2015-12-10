@@ -5,15 +5,16 @@ public class enemyManager : MonoBehaviour {
 	static public GameObject enemyOb;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(GameObject.FindGameObjectsWithTag("enemy").Length == 0){
+			enemyOb = null;
+		}
 		if (this.tag == "enemy") {
 			enemyOb = this.gameObject;
-		} else {
-			enemyOb = null;
 		}
 	}
 
