@@ -41,6 +41,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad7f358cbc3d234f89b3c5006c6bfb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 1
+  ID: 0
   camera: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &11498820

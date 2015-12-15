@@ -14,6 +14,8 @@ TagManager:
   - system
   - deadOb
   - deadEnemy
+  - princess
+  - deadPri
   layers:
   - Default
   - TransparentFX

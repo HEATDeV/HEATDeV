@@ -6,7 +6,7 @@ using System.Collections;
 public class DetonatorForce: DetonatorComponent 
 {
 	private float _baseRadius = 50.0f;
-	private float _basePower = 1000f;
+	private float _basePower = 2000f;
 	private float _scaledRange;
 	private float _scaledIntensity;
 	private bool _delayedExplosionStarted = false;

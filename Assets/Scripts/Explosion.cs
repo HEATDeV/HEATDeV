@@ -16,10 +16,10 @@ public class Explosion : MonoBehaviour {
 			speed = 25;
 		}
 		if(this.gameObject.name == "bakuhatu_middle(Clone)" || this.gameObject.name == "bakuhatu_time(Clone)"){
-			speed = 35;
+			speed = 50;
 		}
 		if(this.gameObject.name == "bakuhatu_big(Clone)"){
-			speed = 45;
+			speed = 100;
 		}
 		if(this.gameObject.name == "bakuhatu_side(Clone)"){
 			speed = 15f;
@@ -39,16 +39,13 @@ public class Explosion : MonoBehaviour {
 		if(col.gameObject.tag == "stage"){
 			if(timer < 0.5f){
 				if(this.gameObject.name == "bakuhatu_small(Clone)"){
-					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
-					// 風力与える
+					col.GetComponent<Rigidbody>().AddExplosionForce(speed, transform.position, 30f, speed / 100f);
 				}
 				if(this.gameObject.name == "bakuhatu_middle(Clone)"){
-					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
-					// 風力与える
+					col.GetComponent<Rigidbody>().AddExplosionForce(speed * 10f, transform.position, 30f, speed / 100f);
 				}
 				if(this.gameObject.name == "bakuhatu_big(Clone)"){
-					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
-					// 風力与える
+					col.GetComponent<Rigidbody>().AddExplosionForce(speed * 10f, transform.position, 50f, speed / 100f);
 				}
 				if(this.gameObject.name == "bakuhatu_upper(Clone)"){
 					velocity = new Vector3(0,col.transform.position.y - transform.position.y,0).normalized * speed * speed * speed;			
@@ -59,8 +56,7 @@ public class Explosion : MonoBehaviour {
 					// 風力与える
 				}
 				if(this.gameObject.name == "bakuhatu_time(Clone)"){
-					velocity = (col.transform.position - transform.position).normalized * speed * speed;			
-					// 風力与える
+					col.GetComponent<Rigidbody>().AddExplosionForce(speed * 10f, transform.position, 30f, speed / 100f);
 				}
 				col.GetComponent<Rigidbody>().AddForce(velocity);
 			}

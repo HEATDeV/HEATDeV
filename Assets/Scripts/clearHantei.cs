@@ -2,13 +2,15 @@
 using System.Collections;
 
 public class clearHantei : MonoBehaviour {
-	int num = 0;
-	float timer = 0;
-    static public float deadTimer = 0;
+	int num;
+	float timer;
+    static public float deadTimer;
     static public GameObject colOb;
 	// Use this for initialization
 	void Start () {
-	
+		num = 0;
+		timer = 0;
+		deadTimer = 0;
 	}
 	
 	// Update is called once per frame

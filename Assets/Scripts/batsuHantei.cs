@@ -55,6 +55,10 @@ public class batsuHantei : MonoBehaviour {
 					target = enemyManager.enemyOb.transform;
 					enemyManager.enemyOb.tag = "deadEnemy";
 				}
+				if(princess.priOb != null){
+					target = princess.priOb.transform;
+					princess.priOb.tag = "deadPri";
+				}
 
 				if(target.name != batsuHantei.nowName){
 					batsuHantei.loadID ++;
@@ -72,6 +76,10 @@ public class batsuHantei : MonoBehaviour {
 				}
 				if(enemyManager.enemyOb != null){
 					batsuHantei.nowName = enemyManager.enemyOb.name;
+				}
+				if(princess.priOb != null){
+					batsuHantei.nowName = princess.priOb.name;
+					princess.priOb = null;
 				}
 			}
 		}

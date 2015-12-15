@@ -28,7 +28,11 @@ public class storyManager : MonoBehaviour {
 			if(alpha >= 1.1){
 				GameObject.Find("ui_nowloading").GetComponent<Image>().color = new Color(1,1,1,1);
 				if(alpha > 1.2){
-					Application.LoadLevel("mainStage");
+					if(Application.loadedLevelName == "ending"){
+						Application.LoadLevel("Title");
+					}else{
+						Application.LoadLevel("mainStage");
+					}
 				}
 			}
 		}
