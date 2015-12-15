@@ -12,6 +12,8 @@ TagManager:
   - enemy
   - dieEnemy
   - system
+  - deadOb
+  - deadEnemy
   layers:
   - Default
   - TransparentFX

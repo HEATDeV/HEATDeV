@@ -13,7 +13,7 @@ public class textSystem : MonoBehaviour {
         }
 		else if(system.stageID == 2)
         {
-			text.text = "右の家は壊さないでください";
+			text.text = "周りの家は壊さないでください";
         }
 		else if(system.stageID == 3)
 		{

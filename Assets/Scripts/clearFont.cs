@@ -6,11 +6,13 @@ public class clearFont : MonoBehaviour {
 	private Animator animator;
 	public bool isSE;
 	private float timer;
+	private float batsuTimer;
 	private int enemyCount;
 	// Use this for initialization
 	void Start () {
 		isSE = false;
 		timer = 0;
+		batsuTimer = 0;
 		animator = GetComponent<Animator>();
 		enemyCount =  GameObject.FindGameObjectsWithTag("enemy").Length;
 	}
@@ -22,6 +24,13 @@ public class clearFont : MonoBehaviour {
 		if(deadLine.isClear == true && nonCol.isDamage == false && enemyCount == 0){
 			isSE = true;
 			animator.SetBool("isClear",true);
+		} else if(deadLine.isClear == false || nonCol.isDamage == true || enemyCount != 0){
+			if(bomManager.limNum < bomManager.bomLim){
+				batsuTimer += Time.deltaTime;
+				if(clearHantei.deadTimer > 8f){
+					animator.SetBool("isBad",true);
+				}
+			}
 		}
 		if(isSE == true){
 			timer += Time.deltaTime;

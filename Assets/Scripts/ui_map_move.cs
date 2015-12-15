@@ -91,18 +91,23 @@ public class ui_map_move : MonoBehaviour {
             touchPos_ed = touchPos_now;
             touchPos_now = Input.mousePosition;
             
-            if (3 < frame)
+            if (1 < frame)
             {
 				touchPos_delt = touchPos_ed - touchPos_now;
-				if(this.transform.position.x <= -sw / 2){
-					this.transform.position = new Vector3(-sw / 2, this.transform.position.y, this.transform.position.z);
+				if(this.transform.position.x < -sw / 2.3f){
+		//			this.transform.position = new Vector3(-sw / 2.3f, this.transform.position.y, this.transform.position.z);
 					if(touchPos_delt.x > 0)
 						touchPos_delt.x = 0;
 				}
-				if(this.transform.position.x >= sw + sw / 2){
-					this.transform.position = new Vector3(sw + sw / 2, this.transform.position.y, this.transform.position.z);
+				if(this.transform.position.x > sw + sw / 2.3f){
+		//			this.transform.position = new Vector3(sw + sw / 2.3f, this.transform.position.y, this.transform.position.z);
 					if(touchPos_delt.x < 0)
 						touchPos_delt.x = 0;
+				}
+				if(touchPos_delt.x > 20){
+					touchPos_delt.x = 20;
+				}else if(touchPos_delt.x < -20){
+					touchPos_delt.x = -20;
 				}
                 transform.Translate(Vector3.left * sw * 0.003f * touchPos_delt.x, Space.World);
             }

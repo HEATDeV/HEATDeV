@@ -18,7 +18,7 @@ public class clearHantei : MonoBehaviour {
 		} else {
 			timer = 0;
 		}
-		if(timer > 3f){
+		if(timer > 5f){
 			deadLine.isClear= true;
 		}
         if(num > 0 && bomManager.isBomber == true){
@@ -33,9 +33,9 @@ public class clearHantei : MonoBehaviour {
 	}
 
     void OnTriggerStay(Collider col) {
-        if (col.gameObject && col.gameObject.tag == "stage" && bomManager.isBomber == true){
+        if (col.gameObject.tag == "stage" && bomManager.isBomber == true){
             colOb = col.gameObject;
-        }
+		}
     }
 
 	void OnTriggerExit(Collider col) {

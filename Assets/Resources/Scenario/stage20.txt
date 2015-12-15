@@ -1,0 +1,25 @@
+﻿//第三章 対決
+
+//コマンドの@は半角で
+@image left=null right=null back=1//キャラ表示コマンド
+ヘイシは長い道のりを経て、オヒメサマとワルモノのいるお城にたどり着きました。
+@br//文章の区切り
+
+@image left=heishi right=null back=1
+オヒメサマを返せ！
+@br
+
+@image left=heishi right=hime back=1
+ヘイシ！
+@br
+
+@image left=heishi right=maou back=1
+だれが返すか！
+それにお前たちはこの壁を壊さない限りこっちには来れないぞ！
+@br
+
+@image left=heishi right=maou back=1
+ここに来るまでに成長した私の力、見せてやる！行くぞ！
+@br
+
+@scene scene=mainStage

@@ -17,17 +17,25 @@ public class Chara : ICommand
 		GameObject himeR = GameObject.Find("himeR");
 		GameObject maouL = GameObject.Find("maouL");
 		GameObject maouR = GameObject.Find("maouR");
-		GameObject heisiBL = GameObject.Find("heisiBL");
-		GameObject heisiBR = GameObject.Find("heisiBR");
+		GameObject ouL = GameObject.Find("ouL");
+		GameObject ouR = GameObject.Find("ouR");
+		GameObject heishiL = GameObject.Find("heishiL");
+		GameObject heishiR = GameObject.Find("heishiR");
+		GameObject teshitaL = GameObject.Find("teshitaL");
+		GameObject teshitaR = GameObject.Find("teshitaR");
 		GameObject back1 = GameObject.Find("back1");
-        Image IhimeL, IhimeR, ImaouL, ImaouR, IheisiBL, IheisiBR, Iback1;
+		Image IhimeL, IhimeR, ImaouL, ImaouR, IouL, IouR, IheishiL, IheishiR, IteshitaL, IteshitaR, Iback1;
 
         IhimeL = himeL.GetComponent<Image>();
 		IhimeR = himeR.GetComponent<Image>();
 		ImaouL = maouL.GetComponent<Image>();
 		ImaouR = maouR.GetComponent<Image>();
-		IheisiBL = heisiBL.GetComponent<Image>();
-		IheisiBR = heisiBR.GetComponent<Image>();
+		IouL = ouL.GetComponent<Image>();
+		IouR = ouR.GetComponent<Image>();
+		IheishiL = heishiL.GetComponent<Image>();
+		IheishiR = heishiR.GetComponent<Image>();
+		IteshitaL = teshitaL.GetComponent<Image>();
+		IteshitaR = teshitaR.GetComponent<Image>();
 		Iback1 = back1.GetComponent<Image>();
 
         string left = command["left"];
@@ -38,43 +46,87 @@ public class Chara : ICommand
 		if(left == "hime"){
 			IhimeL.enabled = true;
 			ImaouL.enabled = false;
-			IheisiBL.enabled = false;
+			IouL.enabled = false;
+			IheishiL.enabled = false;
+			IteshitaL.enabled = false;
 		}
 		else if(left == "maou"){
 			IhimeL.enabled = false;
 			ImaouL.enabled = true;
-			IheisiBL.enabled = false;
+			IouL.enabled = false;
+			IheishiL.enabled = false;
+			IteshitaL.enabled = false;
 		}
-		else if(left == "heisi"){
+		else if(left == "ou"){
 			IhimeL.enabled = false;
 			ImaouL.enabled = false;
-			IheisiBL.enabled = true;
+			IouL.enabled = true;
+			IheishiL.enabled = false;
+			IteshitaL.enabled = false;
+		}
+		else if(left == "heishi"){
+			IhimeL.enabled = false;
+			ImaouL.enabled = false;
+			IouL.enabled = false;
+			IheishiL.enabled = true;
+			IteshitaL.enabled = false;
+		}
+		else if(left == "teshita"){
+			IhimeL.enabled = false;
+			ImaouL.enabled = false;
+			IouL.enabled = false;
+			IheishiL.enabled = false;
+			IteshitaL.enabled = true;
 		}
 		else if(left == "null"){
 			IhimeL.enabled = false;
 			ImaouL.enabled = false;
-			IheisiBL.enabled = true;
+			IouL.enabled = false;
+			IheishiL.enabled = false;
+			IteshitaL.enabled = false;
 		}
 
 		if(right == "hime"){
 			IhimeR.enabled = true;
 			ImaouR.enabled = false;
-			IheisiBR.enabled = false;
+			IouR.enabled = false;
+			IheishiR.enabled = false;
+			IteshitaR.enabled = false;
 		}
 		else if(right == "maou"){
 			IhimeR.enabled = false;
 			ImaouR.enabled = true;
-			IheisiBR.enabled = false;
+			IouR.enabled = false;
+			IheishiR.enabled = false;
+			IteshitaR.enabled = false;
 		}
-		else if(right == "heisi"){
+		else if(right == "ou"){
 			IhimeR.enabled = false;
 			ImaouR.enabled = false;
-			IheisiBR.enabled = true;
+			IouR.enabled = false;
+			IheishiR.enabled = false;
+			IteshitaR.enabled = false;
+		}
+		else if(right == "heishi"){
+			IhimeR.enabled = false;
+			ImaouR.enabled = false;
+			IouR.enabled = false;
+			IheishiR.enabled = true;
+			IteshitaR.enabled = false;
+		}
+		else if(right == "teshita"){
+			IhimeR.enabled = false;
+			ImaouR.enabled = false;
+			IouR.enabled = false;
+			IheishiR.enabled = false;
+			IteshitaR.enabled = true;
 		}
 		else if(right == "null"){
 			IhimeR.enabled = false;
 			ImaouR.enabled = false;
-			IheisiBR.enabled = false;
+			IouR.enabled = false;
+			IheishiR.enabled = false;
+			IteshitaR.enabled = false;
 		}
 
 		if(back == "1"){ 

@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour {
 	private float sx;
 	private float dx;
 	private float tx;
+	static public int colNum;
 	public AudioClip selectSE;
 
 	void Awake(){
+		colNum = 0;
         num = 0;
 		isStart = false;
 		isDrag = false;
@@ -45,34 +47,59 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(!isStart){
 			if(num == 1){
-				Instantiate(Resources.Load("prefab/bom/bom0"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom3"));
 			}
 			if(num == 2){
-				Instantiate(Resources.Load("prefab/bom/bom3"));
-				Instantiate(Resources.Load("prefab/bom/bom4"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 3){
-				Instantiate(Resources.Load("prefab/bom/bom0"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom4"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 4){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom3"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
-				Instantiate(Resources.Load("prefab/bom/bom0"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				
 			}
 			if(num == 5){
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				
+			}
+			if(num == 6){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+			}
+			if(num == 7){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			if(num == 8){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+			}
+			if(num == 9){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			if(num == 10){
 				Instantiate(Resources.Load("prefab/bom/bom2"));
 				Instantiate(Resources.Load("prefab/bom/bom2"));
 				Instantiate(Resources.Load("prefab/bom/bom2"));
 				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			if(num == 20){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			isStart = true;
 			GameObject.Find ("Canvas").GetComponent<Canvas> ().renderMode = RenderMode.ScreenSpaceCamera;
