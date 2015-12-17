@@ -34,6 +34,7 @@ public class clearFont : MonoBehaviour {
 					GameObject.Find ("Main Camera").GetComponent<CameraCtrl>().enabled = false;
 					anim_camera.SetBool("isClear",true);
 					anim_victory.SetBool("isVictory",true);
+					GameObject.Find ("Player").GetComponent<Animator>().SetBool("isWin", true);
 					animator.SetBool("isClear",true);
 				}
 			}else{
@@ -43,6 +44,7 @@ public class clearFont : MonoBehaviour {
 				GameObject.Find ("Main Camera").GetComponent<CameraCtrl>().enabled = false;
 				anim_camera.SetBool("isClear",true);
 				anim_victory.SetBool("isVictory",true);
+				GameObject.Find ("Player").GetComponent<Animator>().SetBool("isWin", true);
 				animator.SetBool("isClear",true);
 			}
 		} else if(deadLine.isClear == false || nonCol.isDamage == true || enemyCount != 0 || princess.isPrincess == false){

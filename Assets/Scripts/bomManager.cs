@@ -30,19 +30,28 @@ public class bomManager : MonoBehaviour {
 	bool isBomLim;
 	static public int limNum;
 	private GameObject child;
-
+	bool isPush;
+	float pushTimer;
 	void Start(){
 		bom = null;
 		isBomLim = false;
 		isBomber = false;
 		isStart = false;
+		isPush = false;
 		bomberTime = 0;
+		pushTimer = 0;
 		num = -1;
 		frame = 0;
 		bomLim = -1;
 	}
 
 	void Update(){
+		if(isPush){
+			pushTimer += Time.deltaTime;
+		}
+		if(pushTimer > 0.75f && !isBomber){
+			bomber();
+		}
 		if(bomLim == limNum && isBomber == true){
 			isBomber = false;
 		}
@@ -232,7 +241,14 @@ public class bomManager : MonoBehaviour {
 		}
 	}
 
-	public void bomber(){
+	public void push_bomber(){
+		isPush = true;
+		GameObject.Find ("character_soldier").GetComponent<Animator>().SetBool("isBomber", true);
+		GameObject.Find ("P_Box").GetComponent<MeshRenderer>().enabled = true;
+		GameObject.Find ("B_Rod").GetComponent<MeshRenderer>().enabled = true;
+	}
+
+	void bomber(){
 		for (int i = 0; i < boms.Length; i ++) {
 			if (boms[i].transform.name == "bom_big(Clone)"){
 				bakuhu = Instantiate (Resources.Load ("prefab/bakuhatu_big"),boms[i].transform.position,Quaternion.identity)as GameObject;
