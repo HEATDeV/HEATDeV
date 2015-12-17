@@ -102,8 +102,7 @@ public class GameManager : MonoBehaviour {
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			isStart = true;
-			GameObject.Find ("Canvas").GetComponent<Canvas> ().renderMode = RenderMode.ScreenSpaceCamera;
-
+//			GameObject.Find ("Canvas").GetComponent<Canvas> ().renderMode = RenderMode.ScreenSpaceCamera;
 		}
 
 		if(Input.GetMouseButtonDown(1)) {

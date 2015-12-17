@@ -38,6 +38,38 @@ public class batsuHantei : MonoBehaviour {
 		if(this.name == "batsu_" + num){
 			ID = num;
 		}
+
+		if(isLoad){		
+			var screenPos = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(target.position);
+			var localPos = Vector2.zero;
+//			RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTrans, screenPos, GameObject.Find("Main Camera").GetComponent<Camera>(), out localPos);
+//			myRectTrans.localPosition = localPos;
+			this.transform.position = screenPos;
+			if (bomManager.isBomber == true)
+			{
+				if (alpha < 1.0f)
+				{
+					alpha += 0.1f * Time.deltaTime * 60.0f;
+				}
+				else
+				{
+					alpha = 1.0f;
+				}
+			}
+			else
+			{
+				if (alpha > 0.0f)
+				{
+					alpha -= 0.4f * Time.deltaTime * 60.0f;
+				}
+				else
+				{
+					alpha = 0.0f;
+				}
+			}
+			this.GetComponent<Image>().color = new Color(1, 1, 1, alpha * 0.5f);
+		}
+
 		if(ID == loadID){
 			if (clearHantei.colOb != null && clearHantei.deadTimer > 6.5f || nonCol.colMe != null && clearHantei.deadTimer > 6.5f)
 	        {
@@ -82,36 +114,6 @@ public class batsuHantei : MonoBehaviour {
 					princess.priOb = null;
 				}
 			}
-		}
-
-		if(isLoad){		
-            var screenPos = GameObject.Find("Main Camera").GetComponent<Camera>().WorldToScreenPoint(target.position);
-            var localPos = Vector2.zero;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTrans, screenPos, GameObject.Find("Main Camera").GetComponent<Camera>(), out localPos);
-            myRectTrans.localPosition = localPos;
-            if (bomManager.isBomber == true)
-            {
-                if (alpha < 1.0f)
-                {
-                    alpha += 0.1f * Time.deltaTime * 60.0f;
-                }
-                else
-                {
-                    alpha = 1.0f;
-                }
-            }
-            else
-            {
-                if (alpha > 0.0f)
-                {
-                    alpha -= 0.4f * Time.deltaTime * 60.0f;
-                }
-                else
-                {
-                    alpha = 0.0f;
-                }
-            }
-            this.GetComponent<Image>().color = new Color(1, 1, 1, alpha * 0.5f);
 		}
 	}
 }

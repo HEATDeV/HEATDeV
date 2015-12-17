@@ -139,6 +139,6 @@ public class system : MonoBehaviour
     public void numSelect20()
     {
         stageNum = 20;
-		stageID = 3;
+		stageID = 4;
 	}
 }

@@ -1750,8 +1750,8 @@ RectTransform:
   m_RootOrder: 57
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -713.125}
-  m_SizeDelta: {x: 800, y: 1425.75}
+  m_AnchoredPosition: {x: 406, y: -729}
+  m_SizeDelta: {x: 927, y: 1558}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &394226718
 MonoBehaviour:
@@ -3509,7 +3509,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10000
 --- !u!1 &783284855
 GameObject:
   m_ObjectHideFlags: 0
@@ -6312,6 +6312,66 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22437810, guid: 1a3688da1e7101941bc9d4e3ab52ec65,
     type: 2}
   m_PrefabInternal: {fileID: 1534830552}
+--- !u!1 &1590883322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1590883324}
+  - 108: {fileID: 1590883323}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1590883323
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590883322}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 6.19999981
+  m_Range: 5
+  m_SpotAngle: 54
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 3.92000008, y: 7.09000015}
+--- !u!4 &1590883324
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590883322}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: 0, y: 3.29999995, z: 4.82000017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2105130647}
+  m_RootOrder: 1
 --- !u!1001 &1600938592
 Prefab:
   m_ObjectHideFlags: 0
@@ -8980,6 +9040,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1194366904}
+  - {fileID: 1590883324}
   m_Father: {fileID: 0}
   m_RootOrder: 6
 --- !u!95 &2105130648

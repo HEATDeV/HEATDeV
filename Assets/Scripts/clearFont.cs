@@ -29,8 +29,8 @@ public class clearFont : MonoBehaviour {
 			if(system.stageNum == 20){
 				if(princess.isPrincess){
 					isSE = true;
-					Debug.Log("" + GameObject.Find ("Main Camera").transform.eulerAngles);// = new Vector3(25, 0, 0);
-//					GameObject.Find ("Main Camera").transform.position = new Vector3(0, 17, -50);
+					GameObject.Find ("Main Camera").transform.eulerAngles = new Vector3(10, 0, 0);
+					GameObject.Find ("Main Camera").transform.position = new Vector3(-0.6f, 16.4f, -30.9f);
 					GameObject.Find ("Main Camera").GetComponent<CameraCtrl>().enabled = false;
 					anim_camera.SetBool("isClear",true);
 					anim_victory.SetBool("isVictory",true);
@@ -38,7 +38,6 @@ public class clearFont : MonoBehaviour {
 				}
 			}else{
 				isSE = true;
-				Debug.Log("" + GameObject.Find ("Main Camera").transform.position);// = new Vector3(25, 0, 0);
 				GameObject.Find ("Main Camera").transform.eulerAngles = new Vector3(10, 0, 0);
 				GameObject.Find ("Main Camera").transform.position = new Vector3(-0.6f, 16.4f, -30.9f);
 				GameObject.Find ("Main Camera").GetComponent<CameraCtrl>().enabled = false;
