@@ -50,15 +50,14 @@ public class GameManager : MonoBehaviour {
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 2){
-				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
 			}
 			if(num == 3){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 4){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				
 			}
 			if(num == 5){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
@@ -66,67 +65,73 @@ public class GameManager : MonoBehaviour {
 				
 			}
 			if(num == 6){
-				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 7){
 				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 8){
 				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 9){
 				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if(num == 10){
 				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if (num == 11)
 			{
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if (num == 12)
 			{
-				Instantiate(Resources.Load("prefab/bom/bom5"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
-				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
 			}
 			
 			if (num == 13)
-			{
-				
-				Instantiate(Resources.Load("prefab/bom/bom1"));
+			{				
+				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if (num == 14)
 			{
-				
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
-				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom5"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
 			if (num == 15)
 			{
-				
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			if (num == 16)
+			{
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+			}
+			if (num == 17){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
@@ -136,9 +141,17 @@ public class GameManager : MonoBehaviour {
 				Instantiate(Resources.Load("prefab/bom/bom2"));
 				Instantiate(Resources.Load("prefab/bom/bom2"));
 			}
-			if (num == 16)
-			{
-				
+			if (num == 18){
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+			}
+			if (num == 19){
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));

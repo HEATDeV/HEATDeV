@@ -242,10 +242,18 @@ public class bomManager : MonoBehaviour {
 	}
 
 	public void push_bomber(){
-		isPush = true;
-		GameObject.Find ("character_soldier").GetComponent<Animator>().SetBool("isBomber", true);
-		GameObject.Find ("P_Box").GetComponent<MeshRenderer>().enabled = true;
-		GameObject.Find ("B_Rod").GetComponent<MeshRenderer>().enabled = true;
+		if (bomLim != limNum) {
+			isPush = true;
+			GameObject.Find ("character_soldier_A").GetComponent<Animator> ().SetBool ("isBomber", true);
+			GameObject.Find ("P_Box_A").GetComponent<MeshRenderer> ().enabled = true;
+			GameObject.Find ("B_Rod_A").GetComponent<MeshRenderer> ().enabled = true;
+			GameObject.Find ("character_soldier_B").GetComponent<Animator> ().SetBool ("isBomber", true);
+			GameObject.Find ("P_Box_B").GetComponent<MeshRenderer> ().enabled = true;
+			GameObject.Find ("B_Rod_B").GetComponent<MeshRenderer> ().enabled = true;
+			GameObject.Find ("character_soldier_C").GetComponent<Animator> ().SetBool ("isBomber", true);
+			GameObject.Find ("P_Box_C").GetComponent<MeshRenderer> ().enabled = true;
+			GameObject.Find ("B_Rod_C").GetComponent<MeshRenderer> ().enabled = true;
+		}
 	}
 
 	void bomber(){

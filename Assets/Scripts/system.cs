@@ -30,16 +30,16 @@ public class system : MonoBehaviour
 	int clearNum;
     void Start()
     {
-        stageNum = PlayerPrefs.GetInt("stageNum");
-        clearNum = PlayerPrefs.GetInt("clearNum");
+		stageNum = PlayerPrefs.GetInt("stageNum");
+		clearNum = PlayerPrefs.GetInt("clearNum");
     }
 
     void Update()
     {
         DontDestroyOnLoad(this);
-        PlayerPrefs.SetInt("stageNum", stageNum);
-        PlayerPrefs.SetInt("clearNum", clearNum);
-        PlayerPrefs.Save();
+		PlayerPrefs.SetInt("stageNum", stageNum);
+		PlayerPrefs.SetInt("clearNum", clearNum);
+		PlayerPrefs.Save();
     }
 
     public void numSelect1() {
@@ -54,12 +54,12 @@ public class system : MonoBehaviour
     public void numSelect3()
     {
         stageNum = 3;
-		stageID = 2;
+		stageID = 1;
 	}
     public void numSelect4()
     {
         stageNum = 4;
-		stageID = 1;
+		stageID = 2;
 	}
     public void numSelect5()
     {
@@ -79,12 +79,12 @@ public class system : MonoBehaviour
     public void numSelect8()
     {
         stageNum = 8;
-		stageID = 2;
+		stageID = 1;
 	}
     public void numSelect9()
     {
         stageNum = 9;
-		stageID = 1;
+		stageID = 2;
 	}
     public void numSelect10()
     {
@@ -104,37 +104,37 @@ public class system : MonoBehaviour
     public void numSelect13()
     {
         stageNum = 13;
-		stageID = 2;
+		stageID = 1;
 	}
     public void numSelect14()
     {
         stageNum = 14;
-		stageID = 1;
+		stageID = 2;
 	}
     public void numSelect15()
     {
         stageNum = 15;
-		stageID = 1;
+		stageID = 3;
 	}
     public void numSelect16()
     {
         stageNum = 16;
-		stageID = 3;
+		stageID = 1;
 	}
     public void numSelect17()
     {
         stageNum = 17;
-		stageID = 2;
+		stageID = 1;
     }
     public void numSelect18()
     {
         stageNum = 18;
-		stageID = 1;
+		stageID = 2;
 	}
     public void numSelect19()
     {
         stageNum = 19;
-		stageID = 2;
+		stageID = 3;
 	}
     public void numSelect20()
     {

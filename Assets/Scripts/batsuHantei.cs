@@ -81,7 +81,7 @@ public class batsuHantei : MonoBehaviour {
 				if (nonCol.colMe != null)
 				{
 					target = nonCol.colMe.transform;
-					nonCol.colMe.tag = "deadOb";
+					nonCol.colMe.tag = "deadOb_house";
 				}
 				if(enemyManager.enemyOb != null){
 					target = enemyManager.enemyOb.transform;

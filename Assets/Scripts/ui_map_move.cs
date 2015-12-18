@@ -31,7 +31,18 @@ public class ui_map_move : MonoBehaviour {
         touchPos_now = Vector3.zero;
         touchPos_ed = Vector3.zero;
         touchPos_delt = Vector3.zero;
-
+		if(system.stageNum >= 1 && system.stageNum <= 6){
+			this.transform.position = new Vector3(sw + sw / 2.3f, this.transform.position.y, this.transform.position.z);
+		}
+		if(system.stageNum >= 7 && system.stageNum <= 9){
+			this.transform.position = new Vector3(sw - sw / 5.5f, this.transform.position.y, this.transform.position.z);
+		}
+		if(system.stageNum >= 10 && system.stageNum <= 14){
+			this.transform.position = new Vector3(sw - sw / 1.35f, this.transform.position.y, this.transform.position.z);
+		}
+		if(system.stageNum >= 15 && system.stageNum <= 20){
+			this.transform.position = new Vector3(-sw / 2.3f, this.transform.position.y, this.transform.position.z);
+		}
 	}
 
 	void Update () {
