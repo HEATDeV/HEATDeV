@@ -32,9 +32,9 @@ public class clearFont : MonoBehaviour {
 					GameObject.Find ("Main Camera").transform.eulerAngles = new Vector3(10, 0, 0);
 					GameObject.Find ("Main Camera").transform.position = new Vector3(-0.6f, 16.4f, -30.9f);
 					GameObject.Find ("Main Camera").GetComponent<CameraCtrl>().enabled = false;
-					anim_camera.SetBool("isClear",true);
-					anim_victory.SetBool("isVictory",true);
-					GameObject.Find ("Player").GetComponent<Animator>().SetBool("isWin", true);
+					anim_camera.SetBool("isClear_princess",true);
+					anim_victory.SetBool("isVictory_princess",true);
+//					GameObject.Find ("Player").GetComponent<Animator>().SetBool("isWin", true);
 					animator.SetBool("isClear",true);
 				}
 			}else{

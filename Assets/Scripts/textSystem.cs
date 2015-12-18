@@ -17,11 +17,11 @@ public class textSystem : MonoBehaviour {
         }
 		else if(system.stageID == 3)
 		{
-			text.text = "敵兵士を全員落としてください";
+			text.text = "敵ヘイシを全員落としてください";
 		}
 		else if(system.stageID == 4)
 		{
-			text.text = "魔王を倒し、姫を救ってください";
+			text.text = "最後です！ヒメを救ってください";
 		}
 	}
 }

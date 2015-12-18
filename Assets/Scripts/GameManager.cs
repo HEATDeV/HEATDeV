@@ -25,15 +25,15 @@ public class GameManager : MonoBehaviour {
 		isDrag = false;
 		isSetBom = false;
 		if (Application.platform == RuntimePlatform.Android) {
-			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
+//			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
 			Application.targetFrameRate = 60; // ターゲットフレームレートを60に設定
 		}
 		else if (Application.platform == RuntimePlatform.IPhonePlayer) {
-			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
+//			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
 			Application.targetFrameRate = 60; // ターゲットフレームレートを60に設定
 		}
 		else if (Application.platform == RuntimePlatform.WindowsPlayer) {
-			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
+//			QualitySettings.vSyncCount = 0; // VSyncをOFFにする
 			Application.targetFrameRate = 60; // ターゲットフレームレートを60に設定
 		}
         num = system.stageNum;
@@ -91,13 +91,70 @@ public class GameManager : MonoBehaviour {
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}
-			if(num == 20){
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
-				Instantiate(Resources.Load("prefab/bom/bom2"));
+			if (num == 11)
+			{
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+			}
+			if (num == 12)
+			{
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			
+			if (num == 13)
+			{
+				
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+			}
+			if (num == 14)
+			{
+				
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+			}
+			if (num == 15)
+			{
+				
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+			}
+			if (num == 16)
+			{
+				
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom1"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+			}
+			if (num == 20){
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom2"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
+				Instantiate(Resources.Load("prefab/bom/bom5"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 				Instantiate(Resources.Load("prefab/bom/bom1"));
 			}

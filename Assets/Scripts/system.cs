@@ -94,7 +94,7 @@ public class system : MonoBehaviour
     public void numSelect11()
     {
         stageNum = 11;
-		stageID = 3;
+		stageID = 1;
 	}
     public void numSelect12()
     {
@@ -109,7 +109,7 @@ public class system : MonoBehaviour
     public void numSelect14()
     {
         stageNum = 14;
-		stageID = 3;
+		stageID = 1;
 	}
     public void numSelect15()
     {
@@ -119,12 +119,12 @@ public class system : MonoBehaviour
     public void numSelect16()
     {
         stageNum = 16;
-		stageID = 2;
+		stageID = 3;
 	}
     public void numSelect17()
     {
         stageNum = 17;
-		stageID = 3;
+		stageID = 2;
     }
     public void numSelect18()
     {
